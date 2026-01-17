@@ -95,8 +95,10 @@ st.markdown("""
     /* ===== MOBILE TAB ADJUSTMENTS ===== */
     @media (max-width: 768px) {
         .stTabs [data-baseweb="tab-list"] {
-            flex-wrap: nowrap;
-            overflow-x: auto;
+            display: flex !important;
+            visibility: visible !important;
+            flex-wrap: nowrap !important;
+            overflow-x: auto !important;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
         }
@@ -106,9 +108,12 @@ st.markdown("""
         }
 
         .stTabs [data-baseweb="tab"] {
-            flex-shrink: 0;
-            padding: 10px 16px;
-            font-size: 13px;
+            display: flex !important;
+            visibility: visible !important;
+            flex-shrink: 0 !important;
+            padding: 10px 16px !important;
+            font-size: 13px !important;
+            min-height: 44px !important;
         }
     }
 

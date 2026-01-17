@@ -235,6 +235,8 @@ def get_navigation_css():
         @media (max-width: 768px) {{
             /* Keep Streamlit tabs visible and scrollable on mobile */
             .stTabs [data-baseweb="tab-list"] {{
+                display: flex !important;
+                visibility: visible !important;
                 flex-wrap: nowrap !important;
                 overflow-x: auto !important;
                 -webkit-overflow-scrolling: touch;
@@ -248,10 +250,12 @@ def get_navigation_css():
             }}
 
             .stTabs [data-baseweb="tab"] {{
+                display: flex !important;
+                visibility: visible !important;
                 flex-shrink: 0 !important;
                 padding: 12px 16px !important;
                 font-size: 13px !important;
-                min-height: 44px;
+                min-height: 44px !important;
             }}
         }}
     </style>
