@@ -231,61 +231,27 @@ def get_navigation_css():
             display: none;
         }}
 
-        /* ===== BOTTOM NAV (Mobile) ===== */
-        .bottom-nav {{
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-top: 1px solid {COLORS['border_light']};
-            display: none;
-            justify-content: space-around;
-            align-items: center;
-            padding: 0 16px;
-            padding-bottom: env(safe-area-inset-bottom, 0);
-            z-index: 1000;
-        }}
-
-        .bottom-nav-item {{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            padding: 8px 12px;
-            border-radius: {BORDER_RADIUS['md']};
-            cursor: pointer;
-            transition: all 0.2s ease;
-            min-width: 64px;
-        }}
-
-        .bottom-nav-item:hover {{
-            background: {COLORS['cream']};
-        }}
-
-        .bottom-nav-item.active {{
-            color: {COLORS['blush']};
-        }}
-
-        .bottom-nav-item .icon {{
-            font-size: 24px;
-        }}
-
-        .bottom-nav-item .label {{
-            font-size: 11px;
-            font-weight: 500;
-        }}
-
+        /* ===== MOBILE RESPONSIVE TABS ===== */
         @media (max-width: 768px) {{
-            .bottom-nav {{
-                display: flex;
+            /* Keep Streamlit tabs visible and scrollable on mobile */
+            .stTabs [data-baseweb="tab-list"] {{
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                padding: 4px !important;
+                gap: 4px !important;
             }}
 
-            .stTabs [data-baseweb="tab-list"] {{
-                display: none !important;
+            .stTabs [data-baseweb="tab-list"]::-webkit-scrollbar {{
+                display: none;
+            }}
+
+            .stTabs [data-baseweb="tab"] {{
+                flex-shrink: 0 !important;
+                padding: 12px 16px !important;
+                font-size: 13px !important;
+                min-height: 44px;
             }}
         }}
     </style>

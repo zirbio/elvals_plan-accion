@@ -92,65 +92,8 @@ st.markdown("""
         }
     }
 
-    /* ===== BOTTOM NAVIGATION FOR MOBILE ===== */
-    .mobile-bottom-nav {
-        display: none;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-top: 1px solid #F0E6E8;
-        padding: 8px 0;
-        padding-bottom: calc(8px + env(safe-area-inset-bottom, 0));
-        z-index: 1000;
-    }
-
-    .mobile-bottom-nav .nav-items {
-        display: flex;
-        justify-content: space-around;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-
-    .mobile-bottom-nav .nav-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-        padding: 8px 16px;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        text-decoration: none;
-        color: #8B7E74;
-    }
-
-    .mobile-bottom-nav .nav-item:hover {
-        background: #FFFBF7;
-    }
-
-    .mobile-bottom-nav .nav-item.active {
-        color: #FF6B9D;
-    }
-
-    .mobile-bottom-nav .nav-item .icon {
-        font-size: 22px;
-    }
-
-    .mobile-bottom-nav .nav-item .label {
-        font-size: 10px;
-        font-weight: 500;
-    }
-
+    /* ===== MOBILE TAB ADJUSTMENTS ===== */
     @media (max-width: 768px) {
-        .mobile-bottom-nav {
-            display: block;
-        }
-
-        /* Hide top tabs on mobile */
         .stTabs [data-baseweb="tab-list"] {
             flex-wrap: nowrap;
             overflow-x: auto;
@@ -284,29 +227,3 @@ with col2:
             save_state({})
             st.rerun()
 
-# =============================================================================
-# MOBILE BOTTOM NAVIGATION (HTML)
-# =============================================================================
-
-st.markdown("""
-<div class="mobile-bottom-nav">
-    <div class="nav-items">
-        <div class="nav-item active">
-            <span class="icon"></span>
-            <span class="label">Dashboard</span>
-        </div>
-        <div class="nav-item">
-            <span class="icon"></span>
-            <span class="label">Checklist</span>
-        </div>
-        <div class="nav-item">
-            <span class="icon"></span>
-            <span class="label">Estrategia</span>
-        </div>
-        <div class="nav-item">
-            <span class="icon"></span>
-            <span class="label">Competidores</span>
-        </div>
-    </div>
-</div>
-""", unsafe_allow_html=True)
