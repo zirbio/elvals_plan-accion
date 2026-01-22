@@ -17,6 +17,7 @@ from src.pages.dashboard import render_dashboard
 from src.pages.checklist import render_checklist
 from src.pages.strategy import render_strategy
 from src.pages.competitors import render_competitors
+from src.pages.insights import render_insights
 
 # =============================================================================
 # PAGE CONFIG
@@ -34,6 +35,7 @@ st.set_page_config(
 # =============================================================================
 
 DOCS_DIR = Path(__file__).parent / "docs" / "plans"
+DATA_DIR = Path(__file__).parent / "data"
 
 # =============================================================================
 # INJECT CSS
@@ -184,11 +186,12 @@ state = init_session_state(st)
 # MAIN NAVIGATION
 # =============================================================================
 
-tab1, tab2, tab3, tab4 = st.tabs([
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
     " Dashboard",
     " Plan Semanal",
     " Estrategia",
     " Competidores",
+    " Insights",
 ])
 
 # =============================================================================
@@ -208,6 +211,9 @@ with tab3:
 
 with tab4:
     render_competitors(DOCS_DIR)
+
+with tab5:
+    render_insights(DATA_DIR)
 
 # =============================================================================
 # FOOTER
