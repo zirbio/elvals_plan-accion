@@ -5,7 +5,6 @@ Extracts competitor data, opportunities, and recommendations.
 
 import re
 from pathlib import Path
-from typing import Optional
 
 
 def parse_competitor_file(file_path: Path) -> dict:

@@ -3,8 +3,8 @@ Insight card components for the Insights page.
 Premium wedding-themed design with comparison visuals.
 """
 
+
 import streamlit as st
-from typing import Optional
 
 
 def render_comparison_metric(

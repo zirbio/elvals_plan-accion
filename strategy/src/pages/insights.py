@@ -3,19 +3,20 @@ Insights page (Tab 5) - Content analysis of best vs worst performing posts.
 Identifies success levers and actionable patterns.
 """
 
-import streamlit as st
 from pathlib import Path
 
-from src.parsers.insights_parser import parse_insights_files
+import streamlit as st
+
 from src.components.insight_cards import (
     render_comparison_metric,
     render_comparison_metric_text,
-    render_lever_card,
     render_do_dont_section,
     render_hashtag_clouds,
+    render_lever_card,
     render_posts_table,
     render_recommendation_card,
 )
+from src.parsers.insights_parser import parse_insights_files
 
 
 def render_insights(data_dir: Path) -> None:

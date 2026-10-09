@@ -3,21 +3,23 @@ El Vals de la Novia - Premium Wedding Dashboard
 Dashboard de estrategia de Instagram con estetica wedding-premium.
 """
 
-import streamlit as st
 from pathlib import Path
+
+import streamlit as st
+
+from src.pages.checklist import render_checklist
+from src.pages.competitors import render_competitors
+
+# Import pages
+from src.pages.dashboard import render_dashboard
+from src.pages.insights import render_insights
+from src.pages.strategy import render_strategy
 
 # Import theme and styles
 from src.styles.theme import inject_css
 
 # Import state management
 from src.utils.state import init_session_state, save_state
-
-# Import pages
-from src.pages.dashboard import render_dashboard
-from src.pages.checklist import render_checklist
-from src.pages.strategy import render_strategy
-from src.pages.competitors import render_competitors
-from src.pages.insights import render_insights
 
 # =============================================================================
 # PAGE CONFIG

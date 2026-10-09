@@ -3,8 +3,9 @@ Hero section component for the dashboard.
 Large gradient banner with key metrics.
 """
 
-import streamlit as st
 from typing import Optional
+
+import streamlit as st
 
 
 def render_hero(

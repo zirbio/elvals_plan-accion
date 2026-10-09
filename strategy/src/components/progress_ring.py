@@ -3,8 +3,9 @@ Circular progress ring component.
 SVG-based with gradient fill and animations.
 """
 
-import streamlit as st
 from typing import Optional
+
+import streamlit as st
 
 
 def render_progress_ring(

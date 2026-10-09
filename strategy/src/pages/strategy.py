@@ -2,10 +2,11 @@
 Strategy page (Tab 3) - Plan overview with KPIs and business models.
 """
 
-import streamlit as st
 from pathlib import Path
 
-from src.components.metric_cards import render_metric_grid, render_kpi_comparison
+import streamlit as st
+
+from src.components.metric_cards import render_kpi_comparison
 from src.components.timeline import render_phase_cards
 from src.parsers.plan_parser import parse_plan_file
 
@@ -21,9 +22,9 @@ def render_strategy(docs_dir: Path) -> None:
     plan_path = docs_dir / "2026-01-17-el-vals-de-la-novia-plan.md"
     plan_data = parse_plan_file(plan_path)
 
-    phases = plan_data.get("phases", [])
-    business_models = plan_data.get("business_models", [])
-    projections = plan_data.get("projections", [])
+    plan_data.get("phases", [])
+    plan_data.get("business_models", [])
+    plan_data.get("projections", [])
 
     # =========================================================================
     # PHASE OVERVIEW

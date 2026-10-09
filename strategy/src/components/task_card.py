@@ -3,8 +3,9 @@ Task card component with premium checkbox design.
 The main interactive element of the checklist.
 """
 
-import streamlit as st
 from typing import Callable, Optional
+
+import streamlit as st
 
 
 def render_task_card(

@@ -5,7 +5,6 @@ Extracts KPIs, phases, business models, and financial projections.
 
 import re
 from pathlib import Path
-from typing import Optional
 
 
 def parse_plan_file(file_path: Path) -> dict:

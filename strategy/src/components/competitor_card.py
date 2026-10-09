@@ -3,8 +3,9 @@ Competitor card component for the analysis section.
 Displays competitor information in a visually appealing card.
 """
 
-import streamlit as st
 from typing import Optional
+
+import streamlit as st
 
 
 def render_competitor_card(

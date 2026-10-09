@@ -4,9 +4,8 @@ Handles local persistence with JSON files.
 """
 
 import json
-from pathlib import Path
 from datetime import datetime
-from typing import Any
+from pathlib import Path
 
 # Default state file path
 STATE_FILE = Path(__file__).parent.parent.parent / ".checklist_state.json"
