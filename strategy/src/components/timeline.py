@@ -3,8 +3,8 @@ Timeline component for visualizing phases and months.
 Horizontal scrollable timeline with status indicators.
 """
 
+
 import streamlit as st
-from typing import Optional
 
 
 def render_timeline(

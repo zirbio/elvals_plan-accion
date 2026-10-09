@@ -24,3 +24,7 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+.ruff_cache/
+
+# Repositorio independiente de la landing antigua
+/vals-novia-landing/

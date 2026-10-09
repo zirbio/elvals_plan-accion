@@ -2,14 +2,15 @@
 Checklist page (Tab 2) - Weekly plan with interactive tasks.
 """
 
-import streamlit as st
 from pathlib import Path
 
-from src.components.progress_ring import render_progress_ring, render_progress_bar
+import streamlit as st
+
+from src.components.progress_ring import render_progress_bar, render_progress_ring
 from src.components.task_card import render_day_header, render_ideas_bank
 from src.parsers.checklist_parser import (
-    parse_checklist_file,
     calculate_week_progress,
+    parse_checklist_file,
 )
 from src.utils.state import save_state
 
@@ -54,7 +55,7 @@ def render_checklist(docs_dir: Path, state: dict) -> dict:
             week_data = weeks.get(week_name, {})
 
             # Calculate week progress
-            week_tasks = [t for day_tasks in week_data.values() for t in day_tasks]
+            [t for day_tasks in week_data.values() for t in day_tasks]
             week_progress = calculate_week_progress(tasks, state, week_name)
 
             # =========================================================================

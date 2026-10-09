@@ -2,18 +2,19 @@
 Competitors page (Tab 4) - Market analysis and positioning.
 """
 
-import streamlit as st
 from pathlib import Path
+
+import streamlit as st
 
 from src.components.competitor_card import (
     render_competitor_card,
-    render_positioning_map,
     render_opportunity_card,
+    render_positioning_map,
 )
 from src.parsers.competitor_parser import (
-    parse_competitor_file,
     get_default_competitors,
     get_default_opportunities,
+    parse_competitor_file,
 )
 
 
@@ -29,7 +30,7 @@ def render_competitors(docs_dir: Path) -> None:
     comp_data = parse_competitor_file(competitor_path)
 
     competitors = comp_data.get("competitors", get_default_competitors())
-    opportunities = comp_data.get("opportunities", get_default_opportunities())
+    comp_data.get("opportunities", get_default_opportunities())
 
     # =========================================================================
     # POSITIONING MAP

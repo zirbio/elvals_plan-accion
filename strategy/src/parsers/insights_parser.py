@@ -3,9 +3,10 @@ Parser for Instagram posts insights Excel files.
 Extracts metrics from best and worst performing posts.
 """
 
-import pandas as pd
 from pathlib import Path
 from typing import Optional
+
+import pandas as pd
 
 
 def parse_insights_files(data_dir: Path) -> dict:

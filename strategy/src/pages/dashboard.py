@@ -2,15 +2,16 @@
 Dashboard page (Tab 1) - Overview with hero section and key metrics.
 """
 
-import streamlit as st
 from pathlib import Path
 
-from src.components.hero import render_hero, render_focus_section
-from src.components.metric_cards import render_metric_grid, render_kpi_comparison
+import streamlit as st
+
+from src.components.hero import render_focus_section, render_hero
+from src.components.metric_cards import render_kpi_comparison, render_metric_grid
 from src.components.progress_ring import render_progress_ring
-from src.components.timeline import render_timeline, render_phase_cards, render_month_indicator
-from src.parsers.checklist_parser import parse_checklist_file, get_today_tasks, calculate_week_progress
-from src.parsers.plan_parser import parse_plan_file, get_current_phase
+from src.components.timeline import render_phase_cards, render_timeline
+from src.parsers.checklist_parser import calculate_week_progress, get_today_tasks, parse_checklist_file
+from src.parsers.plan_parser import get_current_phase, parse_plan_file
 
 
 def render_dashboard(docs_dir: Path, state: dict) -> None:
@@ -29,7 +30,7 @@ def render_dashboard(docs_dir: Path, state: dict) -> None:
     plan_data = parse_plan_file(plan_path)
 
     tasks = checklist_data.get("tasks", [])
-    kpis = plan_data.get("kpis", {})
+    plan_data.get("kpis", {})
 
     # =========================================================================
     # HERO SECTION - Engagement Goal

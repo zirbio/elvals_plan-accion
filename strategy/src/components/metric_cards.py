@@ -3,8 +3,9 @@ Metric card components for the dashboard.
 Premium wedding-themed design with gold accents.
 """
 
-import streamlit as st
 from typing import Optional
+
+import streamlit as st
 
 
 def render_metric_card(
